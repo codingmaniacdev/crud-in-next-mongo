@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link'
 import { useParams } from 'next/navigation';
-import React from 'react'
+import React, { useState } from 'react'
 
 const getUserById = async (id) => {
   try {
@@ -22,8 +22,9 @@ const getUserById = async (id) => {
 
 const page = async () => {
   const { id } = useParams();
-
   const { user } = await getUserById(id);
+
+
   return (
     <div className="container mx-auto">
       <div className="max-w-2xl rounded overflow-hidden shadow-lg m-auto mt-20 border">
