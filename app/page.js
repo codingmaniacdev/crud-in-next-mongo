@@ -36,6 +36,7 @@ export default function Home() {
       if (!res.ok) {
         throw new Error("failed to store user");
       }
+      navigate.refresh();
       navigate.push('/users');
     } catch (error) {
       console.log("failed to store user", error);
